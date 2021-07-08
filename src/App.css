@@ -1,0 +1,210 @@
+:root {
+  --accent: #F50057;
+  --light-grey: #777777;
+  --body: #f9f2f5;
+  --text: #000000;
+  --white: #fff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
+
+
+/* quick reset on default form elements */
+/* little reset on form el 
+
+from https://www.codegrepper.com 
+button reset: https://www.codegrepper.com/code-examples/css/css+reset+button+style
+*/
+button {
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+button:hover {
+  
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+button:active {
+  outline: none;
+  border: none;
+}
+
+button:focus {
+  outline: 0;
+}
+/* custom */
+input {
+  border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* 
+.input:focus {
+} */
+
+
+
+
+
+body {
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  background: var(--body);
+  padding: 12px;
+  min-height: 100vh;
+}
+.section-ya-todo {
+  margin-top: 50%;
+}
+form {
+  display: flex;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: 70px;
+  border-radius: 3px;
+  font-weight: 700;
+  background-color:var(--white);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+#addTodo {
+  flex: 1;
+  font-size: 1.4rem;
+}
+.button {
+  border-radius: 3px;
+  color: var(--accent);
+  cursor: pointer;
+
+}
+button {
+  cursor: pointer;
+}
+
+.empty-todos {
+  text-align: center;
+  margin-top: 15%;
+} 
+.img-mid {
+  max-width: 180px;
+}
+
+.level3H {
+  color: var(--light-grey);
+  font-size: 2.0rem;
+  font-weight: 300;
+}
+.slide-top {
+	-webkit-animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  }
+  @keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  } 
+
+.completed-todo {
+  text-decoration: line-through;
+  color: #c1c1c1!important;
+  font-style: italic;
+  font-weight: lighter;
+  background-color: #e0dadd;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset!important; */
+  box-shadow: none!important;
+}
+
+.todo-item {
+  color: #111;
+  list-style-type: none;
+  background-color: var(--white);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: 60px;
+  margin-top: 9px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.todo-item:hover {
+  /* background-color: #fff7fa; */
+}
+.flex-wider {
+  flex: 1;
+}
+.todo-title {
+  margin-left: 16px;
+  position: relative;
+  text-transform: capitalize;
+  font-size: .8rem;
+  font-weight: 700;
+  width: 100%;
+  height: 60px;
+
+}
+.capture-wide-parent {
+  width: 95%;
+  padding-left: 6px;
+  position: absolute;
+  top: 20px;
+  height: 100%;
+  left: 0;
+}
+
+
