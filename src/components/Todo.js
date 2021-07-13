@@ -1,8 +1,5 @@
 import React from 'react';
 
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 function Todo({todo,setTodos, todos}) {
     const handleCompleteChange = (e) => {
         const value = parseFloat(e.target.value);
