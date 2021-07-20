@@ -5,11 +5,11 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 
 // custom components
 import Todo from './Todo';
-import NoTodos from './NoTodos';
 
 function Todos() {
     const [ todos, setTodos ] = useState([]);
     const [addTodoInput, setAddTodoInput] = useState("");
+
 
     const handleTodoSubmit = e => {
         e.preventDefault();
@@ -19,7 +19,7 @@ function Todos() {
             date: new Date().toDateString(),
             completed: false
         }
-        if( !newTodo.title ) {
+        if( !newTodo.title || newTodo.title === " " ) {
             alert("empty task. please add a tsk");
             return false;
         }
@@ -34,6 +34,10 @@ function Todos() {
     }
     return (
         <div className="section-ya-todo">
+            <div>
+                <h3 class="ya-title">Tasks: [{todos.length || "0"}] </h3>
+            
+            </div>
             <form onSubmit={handleTodoSubmit}>
                 <input 
                 value={addTodoInput} 
@@ -43,17 +47,18 @@ function Todos() {
                 id="addTodo" 
                 placeholder="Create your new Task" 
                 required
+                autoFocus
                 autoComplete="off"/>
                 <button className="button">
                     <AddBoxIcon fontSize="large" />
                 </button>
             </form>
-            {todos.length || ""}
-
+            <ul className="todo-sect-lists">
+        
             { todos.length ? todos.map((todo, index) => (
                 <Todo todo={todo} setTodos={setTodos} todos={todos} key={todo.id} />
-            )) : <NoTodos />}
-
+            )) : null}
+            </ul>
             
         </div>
     )

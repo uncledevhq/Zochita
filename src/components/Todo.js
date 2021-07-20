@@ -1,5 +1,5 @@
 import React from 'react';
-
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 function Todo({todo,setTodos, todos}) {
     const handleCompleteChange = (e) => {
         const value = parseFloat(e.target.value);
@@ -13,19 +13,20 @@ function Todo({todo,setTodos, todos}) {
         }))
 
     }
-    const handleDeleteTodo = (e) => {
-        e.stopPropagation();
+    const handleDeleteTodo = ( id) => {        
 
-
-        const value = parseFloat(e.target.value);
-        // console.log(e.target.value, "changed")
-        const newTodo = todos.filter((item) => item.id !== value)
-        setTodos(newTodo);
+        setTimeout(() => {
+            const value = parseFloat(id);
+            // console.log(e.target.value, "changed")
+            const newTodo = todos.filter((item) => item.id !== value)
+            setTodos(newTodo);
+        }, 250);
         // console.log(todos.length);
     }
+
     return (
         
-        <li className={`todo-item ${todo.completed && "completed-todo"}`}>
+        <li className={`todo-item bounceIn ${todo.completed && "completed-todo"}`}>
             <div className="">
                 <input  onChange={handleCompleteChange} type="checkbox" name="completed" id={`completed${todo.id}`} value={todo.id} />
             </div>
@@ -37,8 +38,8 @@ function Todo({todo,setTodos, todos}) {
             </div>
 
             <div className="edit-btn-container">
-                <button value={todo.id} onClick={handleDeleteTodo}>
-                    Delete
+                <button onClick={() => handleDeleteTodo(todo.id)}>
+                    <DeleteForeverIcon style={{ color: "#18171d" }} />
                 </button>
             </div>
            
