@@ -17,25 +17,22 @@ function Todo({ todo, setTodos, todos }) {
   };
   const handleDeleteTodo = (id) => {
     setTimeout(() => {
-      const value = parseFloat(id);
-      // console.log(e.target.value, "changed")
-      const newTodo = todos.filter((item) => item.id !== value);
-      setTodos(newTodo);
+      const currentTodoID = parseFloat(id);
+      const remainingTodos = todos.filter((item) => item.id !== currentTodoID);
+      setTodos(remainingTodos);
     }, 250);
-    // console.log(todos.length);
   };
 
   return (
     <li className={`todo-item bounceIn `}>
-      <div className="">
-        <input
-          onChange={handleCompleteChange}
-          type="checkbox"
-          name="completed"
-          id={`completed${todo.id}`}
-          value={todo.id}
-        />
-      </div>
+      <input
+        onChange={handleCompleteChange}
+        type="checkbox"
+        name="completed"
+        id={`completed${todo.id}`}
+        value={todo.id}
+      />
+
       <div className="flex-wider todo-title">
         <label
           className={`capture-wide-parent ${

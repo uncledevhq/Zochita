@@ -1,18 +1,11 @@
-import './App.css';
+import Todos from "./components/Todos";
 
-
-//custom imports
-import Todos from './components/Todos';
-import ChombaRibbon from './components/ChombaRibbon';
-
+import "./App.css";
 function App() {
   return (
-    <main>
-     <ChombaRibbon projectName={"Zochita"} /> 
     <div className="body-ya-app">
       <Todos />
     </div>
-    </main>
   );
 }
 
