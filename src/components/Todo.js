@@ -17,17 +17,16 @@ function Todo({ todo, setTodos, todos }) {
   };
   const handleDeleteTodo = (id) => {
     setTimeout(() => {
-      const value = parseFloat(id);
-      // console.log(e.target.value, "changed")
-      const newTodo = todos.filter((item) => item.id !== value);
-      setTodos(newTodo);
+      const currentTodoID = parseFloat(id);
+      const remainingTodos = todos.filter((item) => item.id !== currentTodoID);
+      setTodos(remainingTodos);
     }, 250);
-    // console.log(todos.length);
+
   };
 
   return (
     <li className={`todo-item bounceIn `}>
-      <div className="">
+      <div>
         <input
           onChange={handleCompleteChange}
           type="checkbox"
